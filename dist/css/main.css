@@ -69,7 +69,16 @@ body {
 }
 
 .menu__wrapper {
-  display: none;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+  top: 65px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  z-index: -1;
+  right: auto;
 }
 
 .nav__list {
@@ -180,13 +189,13 @@ body {
   -ms-flex-pack: center;
   justify-content: center;
   display: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .modal-overlay--visible {
   opacity: 1;
   visibility: visible;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
   z-index: 50;
 }
 
@@ -588,10 +597,6 @@ body {
   transition: 0.5s;
 }
 @media (max-width: 900px) {
-  .nav {
-    display: none;
-  }
-
   .header {
     position: fixed;
     right: 0;
@@ -601,8 +606,8 @@ body {
     padding: 15px 0 10px;
   }
 
-  .main__img {
-    margin-top: 65px;
+  .nav {
+    display: none;
   }
 
   .logo {
@@ -627,6 +632,8 @@ body {
     -webkit-flex-shrink: 0;
     -ms-flex-negative: 0;
     flex-shrink: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
   }
 
   .header__burger.active {
@@ -637,17 +644,8 @@ body {
     display: none;
   }
 
-  .menu__wrapper {
-    height: 100%;
-    position: fixed;
-    box-sizing: border-box;
-    overflow: hidden;
-    top: 65px;
-  }
-
   .menu__wrapper.active {
-    display: block;
-    width: 100%;
+    opacity: 1;
     background: rgba(33, 33, 33, 0.6);
     left: 0;
     z-index: 20;
@@ -666,13 +664,14 @@ body {
     top: 60px;
     padding-top: 25px;
     padding-left: 20px;
-    -webkit-transition: 0.6s;
-    transition: 0.6s;
     height: 100%;
     width: 50%;
     background-color: #ffcd00;
     left: 0;
+    margin-right: auto;
     z-index: 30;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 
   .menu .menu__nav {
@@ -745,6 +744,10 @@ body {
 
   .menu .menu__nav .social__icons-item {
     background: #ecb200;
+  }
+
+  .main__img {
+    margin-top: 65px;
   }
 
   .rules {
